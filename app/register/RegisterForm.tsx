@@ -33,21 +33,21 @@ type FormData = {
 };
 
 export default function RegisterForm() {
-  const [otpSent, setOtpSent] = useState(false);
+//   const [otpSent, setOtpSent] = useState(false);
   const { toast } = useToast();
   const { register, handleSubmit, setError, watch, reset, setValue } = useForm<FormData>();
-  const phone = watch('phone');
+//   const phone = watch('phone');
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    try {
-      const response = await axios.post('/register', data);
-      if (response.data.success) {
-        reset();
+    // try {
+    //   const response = await axios.post('/register', data);
+    //   if (response.data.success) {
+        // reset();
         toast({ description: 'Registration Successful!' });
-      }
-    } catch (error) {
-      toast({ description: 'Registration failed.', variant: 'destructive' });
-    }
+    //   }
+    // } catch (error) {
+    //   toast({ description: 'Registration failed.', variant: 'destructive' });
+    // }
   };
 
   return (
