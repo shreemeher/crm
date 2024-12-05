@@ -1,11 +1,11 @@
 'use client';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import axios from 'axios';
+// import axios from 'axios';
 import { Separator } from '@/components/ui/separator';
 import {
   Select,
@@ -35,7 +35,9 @@ type FormData = {
 export default function RegisterForm() {
 //   const [otpSent, setOtpSent] = useState(false);
   const { toast } = useToast();
-  const { register, handleSubmit, setError, watch, reset, setValue } = useForm<FormData>();
+//   const { register, handleSubmit, setError, watch, reset, setValue } = useForm<FormData>();
+
+  const { register, handleSubmit, setValue } = useForm<FormData>();
 //   const phone = watch('phone');
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -43,7 +45,10 @@ export default function RegisterForm() {
     //   const response = await axios.post('/register', data);
     //   if (response.data.success) {
         // reset();
-        toast({ description: 'Registration Successful!' });
+        toast({
+            title: 'Registration Successful!',
+            description: `Name: ${data.fname} ${data.lname}, Phone: ${data.phone}, Email: ${data.email}, Address: ${data.street}, ${data.city}, ${data.state}, ${data.country}, Pincode: ${data.pincode}`,
+          });
     //   }
     // } catch (error) {
     //   toast({ description: 'Registration failed.', variant: 'destructive' });
