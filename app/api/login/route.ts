@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/login.php`,
       { email, password },
-      { headers: { 'Content-Type': 'application/json' } }
+      // { headers: { 'Content-Type': 'application/json' } }
     );
 
     if (response.data.status === 'success') {
