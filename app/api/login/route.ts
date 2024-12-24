@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
 
 export async function POST(req: NextRequest) {
+  console.log('ENV Variable',process.env.NEXT_PUBLIC_API_URL);
   try {
     const { email, password } = await req.json();
 
