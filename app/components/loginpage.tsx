@@ -48,7 +48,7 @@ export default function LoginPage() {
   
     try {
       const response = await axios.post("/api/login", data, {
-        withCredentials: true,
+        // withCredentials: true,
       });
   
       if (response.data.status === "success") {
