@@ -14,7 +14,7 @@ export default function decode(): DecodedToken | null {
         const token = localStorage.getItem('auth_token');
 
         if (!token) {
-            console.error('No authenticated');
+            console.log('No authenticated');
             return null;
         }
 
