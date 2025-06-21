@@ -7,7 +7,7 @@ import Link from "next/link";
 import { extractPermissions, Permission } from "../hooks/permissions";
 import decode from "../hooks/decode";
 import { Skeleton } from "@/components/ui/skeleton"; // Assuming this is from ShadCN UI
-import {  BookMarked, LayoutList } from "lucide-react";
+import {  BookMarked, LayoutList, BarChart3 } from "lucide-react";
 
 export default function DashboardLayout() {
   const router = useRouter();
@@ -87,6 +87,14 @@ export default function DashboardLayout() {
           ) : (
            ''
           )}
+          <Link href="/stats">
+            <Card className="w-full h-auto p-6 rounded-md border">
+              <CardTitle className="font-serif flex"><BarChart3 />&nbsp;Stats</CardTitle>
+              <CardDescription className="m-3 flex">
+                Application statistics
+              </CardDescription>
+            </Card>
+          </Link>
         </div>
       </main>
     </div>
